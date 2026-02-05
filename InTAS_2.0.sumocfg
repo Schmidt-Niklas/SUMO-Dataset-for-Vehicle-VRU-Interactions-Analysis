@@ -1,0 +1,88 @@
+<configuration>
+
+
+<input>
+    <net-file value="new_ingolstadt.net.xml"/>
+
+    <route-files value="
+        routes/vehicles_filtered.rou.xml,
+        routes/buses_filtered.rou.xml,
+        routes/peds_filtered.rou.xml,
+        routes/ped_audi.rou.xml"/>
+
+    <additional-files value="
+        BusStations.add.xml,
+        InTAS_E1.add.xml,
+        InTAS.poly.xml,
+        crossings.add.xml,
+        pedestrian.add.xml,
+        counts.add.xml"/>
+</input>
+
+
+    <output>
+        <summary-output value="InTAS.simulation.summary.xml"/>
+        <!-- Tripinfos für Fahrzeuge UND Fußgänger -->
+        <tripinfo-output value="InTAS.simulation.tripinfo.xml" include-persons="true"/>
+        <statistic-output value="InTAS.simulation.statistic.xml"/>
+        <!-- Vollständige Routen mit Kanten -->
+        <vehroute-output value="InTAS.simulation.vehroute.xml" write-edges="true"/>
+        <personinfo-output value="InTAS.simulation.personinfo.xml" write-edges="true"/>
+	
+	<!-- NEU: Zeitstempel auf Route-Edges und Personen-Stages -->
+  	<vehroute-output.exit-times value="true"/>
+
+	<!-- OPTIONAL (empfohlen für Lane-basierte Metriken & später TTC/PET) -->
+  	<fcd-output value="InTAS.simulation.fcd.xml"/>
+  	<device.fcd.period value="0.1"/>
+
+    </output>
+
+    <time>
+        <begin value="0"/>
+        <step-length value="0.1"/>
+        <end value="86400"/>
+    </time>
+
+    <processing>
+	<!-- 2. Änderung Wichtig für Shared Space Interaktion -->
+        <lateral-resolution value="0.3"/>
+
+	<route-steps value="200"/>
+        <threads value="1"/>
+        <ignore-junction-blocker value="0"/>
+        <time-to-teleport value="300"/>
+        <time-to-teleport.highways value="300"/>
+        <max-depart-delay value="300"/>
+        <default.carfollowmodel value="Krauss"/>
+        <parking.maneuver value="true"/>
+        <pedestrian.model value="striping"/>
+        <pedestrian.striping.stripe-width value="0.55"/>
+        <pedestrian.striping.jamtime value="30"/>
+    </processing>
+
+    <routing> 
+	<!-- Änderung Wichtig: device.rerouting.probability value von 0.82 auf 0.0 gesetzt, damit keine live  Neuberechnungen stattfinden-->
+        <routing-algorithm value="dijkstra"/>
+        <device.rerouting.explicit value="default_001,default_002,default_003,default_004,default_005,
+                                          default_006,default_007,default_008,default_009,default_010,
+                                          default_011,default_012,default_013,default_014,default_015,
+                                          default_016,default_017,default_018,default_019,default_020,
+                                          default_021,default_022,random_001,random_002,random_003,
+                                          random_004,random_005,random_006,random_007,random_008,
+                                          random_009,random_010,random_011,random_012,random_013,
+                                          random_014,random_015,random_016,random_017,random_018,
+                                          random_019,random_020,random_021,random_022"/>
+        <device.rerouting.probability value="0.0"/>
+        <device.rerouting.period value="300"/>
+        <device.rerouting.threads value="1"/>
+        <device.rerouting.synchronize value="true"/>
+        <persontrip.transfer.car-walk value="allJunctions"/>
+    </routing>
+
+    <report>
+        <verbose value="true"/>
+        <no-warnings value="true"/>
+        <log value="InTAS.simulation.log"/>
+    </report>
+</configuration>
