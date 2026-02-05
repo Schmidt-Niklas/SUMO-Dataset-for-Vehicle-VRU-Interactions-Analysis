@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<additional>
+    <!-- Zählt alle Fahrzeuge und Fußgänger, die die Kreuzung 30965809 queren -->
+    <edgeData id="count30965809" file="counts_30965809.xml" freq="60"/>
+</additional>
