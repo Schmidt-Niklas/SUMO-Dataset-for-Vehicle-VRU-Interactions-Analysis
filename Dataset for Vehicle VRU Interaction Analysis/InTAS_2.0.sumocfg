@@ -8,7 +8,7 @@
         routes/vehicles_filtered.rou.xml,
         routes/buses_filtered.rou.xml,
         routes/peds_filtered.rou.xml,
-        routes/ped_audi.rou.xml"/>
+        routes/synthetic_peds_filtered_retimed.sorted.rou.xml"/>
 
     <additional-files value="
         BusStations.add.xml,
