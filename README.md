@@ -12,8 +12,7 @@ This repository provides an extended SUMO scenario for the simulation and analys
 
 The dataset was developed as the simulation foundation for evaluating infrastructure-based traffic-control and reinforcement-learning approaches in mixed urban traffic.
 
-- Dataset Extensions
-The original InTAS scenario was extended through the following steps:
+**The original InTAS scenario was extended through the following steps:**
 
 - Pedestrian infrastructure:
 Walking areas, pedestrian crossings, and shared spaces were added to the road network.
