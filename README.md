@@ -4,7 +4,7 @@ This project extends the SUMO Dataset "InTas" with synthetically generated pedes
 Source: S. LOBO, S. NEUMEIER, E. FERNANDEZ, C. FACCHI, "InTAS - The Ingolstadt Traffic Scenario for SUMO". SUMO User Conference Proceedings, 2020, ISSN 2750-4425, DOI 10.52825
 https://github.com/silaslobo/InTAS
 
-The paper reference of this study just published:
+**The paper reference of this study just published:**
 Schmidt, N., Roque, A. S., Bied, M., de Freitas, E. P., Vinel, A. "Generating Synthetic Pedestrian Mobility for Vehicle-Pedestrian Interaction Analysis in SUMO," 2026 IEEE 29th International Conference on Intelligent Transportation Systems (ITSC), Napoli, Italy, 2026, doi: soon.
 
 
